@@ -1,3 +1,3 @@
 # animal_shelter
-Sonoma County animal shelter data analysis
+Project discription: Sonoma County animal shelter data analysis
 This readme file needs to be updated.
