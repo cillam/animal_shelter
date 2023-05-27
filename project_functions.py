@@ -8,8 +8,11 @@ import matplotlib.pyplot as plt
 from numpy import arange
 
 
-# Plot monthly outcomes/intakes
+# Plot monthly outcomes/intakes and intake average
 def monthly_in_out(count, year, category):
+    months = {1: "Jan", 2: "Feb", 3: "Mar", 4: "Apr", 5: "May", 6: "Jun",
+              7: "Jul", 8: "Aug", 9: "Sep", 10: "Oct", 11: "Nov", 12: "Dec"}
+    labels = [months[x] for x in count.index.values]
     plt.figure(figsize=(8, 6))
     plt.style.use('seaborn-v0_8-colorblind')
     b = plt.bar(count.index.values, count, width=0.6)
@@ -17,11 +20,11 @@ def monthly_in_out(count, year, category):
     plt.title(f"Number of {category} per Month ({year})")
     plt.ylabel(f"{category}")
     plt.xlabel("Month")
-    plt.xticks(count.index.values, ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
+    plt.xticks(count.index.values, labels)
     plt.show()
 
 
+# this function will be updated to plot monthly average against adoption average
 def monthly_in_out_grouped(count1, count2, year):
     months = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
               "Oct", "Nov", "Dec")
