@@ -7,12 +7,13 @@ Created on Wed May 24 09:47:57 2023
 import matplotlib.pyplot as plt
 from numpy import arange
 
+MONTHS = {1: "Jan", 2: "Feb", 3: "Mar", 4: "Apr", 5: "May", 6: "Jun", 7: "Jul",
+          8: "Aug", 9: "Sep", 10: "Oct", 11: "Nov", 12: "Dec"}
+
 
 # Plot monthly outcomes/intakes and intake average
 def monthly_in_out(count, year, category):
-    months = {1: "Jan", 2: "Feb", 3: "Mar", 4: "Apr", 5: "May", 6: "Jun",
-              7: "Jul", 8: "Aug", 9: "Sep", 10: "Oct", 11: "Nov", 12: "Dec"}
-    labels = [months[x] for x in count.index.values]
+    labels = [MONTHS[x] for x in count.index.values]
     plt.figure(figsize=(8, 6))
     plt.style.use('seaborn-v0_8-colorblind')
     b = plt.bar(count.index.values, count, width=0.6)
@@ -22,6 +23,7 @@ def monthly_in_out(count, year, category):
     plt.xlabel("Month")
     plt.xticks(count.index.values, labels)
     plt.show()
+    plt.close(plt.gcf())
 
 
 # this function will be updated to plot monthly average against adoption average
