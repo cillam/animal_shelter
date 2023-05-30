@@ -18,7 +18,7 @@ def monthly_in_out(count, year, category):
     plt.style.use('seaborn-v0_8-colorblind')
     b = plt.bar(count.index.values, count, width=0.6)
     plt.bar_label(b)
-    plt.title(f"Number of {category} per Month ({year})")
+    plt.title(f"Number of {category} per Month ({year})", size = 20, weight="bold")
     plt.ylabel(f"{category}")
     plt.xlabel("Month")
     plt.xticks(count.index.values, labels)
@@ -55,3 +55,4 @@ def monthly_in_out_grouped(count1, count2, year):
     ax.legend(ncols=3)
 
     plt.show()
+
