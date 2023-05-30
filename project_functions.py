@@ -18,13 +18,38 @@ def monthly_in_out(count, year, category):
     plt.style.use('seaborn-v0_8-colorblind')
     b = plt.bar(count.index.values, count, width=0.6)
     plt.bar_label(b)
-    plt.title(f"Number of {category} per Month ({year})", size = 20, weight="bold")
+    plt.title(f"Number of {category} per Month ({year})", size = 20,
+              weight="bold")
     plt.ylabel(f"{category}")
     plt.xlabel("Month")
     plt.xticks(count.index.values, labels)
     plt.show()
     plt.close(plt.gcf())
 
+
+# Plot outcome and animal type pie charts
+def type_pie_chart(types, title):
+    types_counts = types.to_numpy()
+    types_formatted = [x.title() for x in types.index.values]
+
+    fig, ax = plt.subplots(figsize=(10, 7))
+    wedges, texts, autotexts = ax.pie(types_counts,
+                                      autopct=lambda pct: "{:.2f}%".format(pct)
+                                      if (pct > 5) else None,
+                                      startangle=180,
+                                      colors=("goldenrod", "turquoise",
+                                              "mediumslateblue", "lightblue",
+                                              "steelblue", "olive", "grey"),
+                                      textprops=dict(color="black"))
+
+    ax.legend(wedges, types_formatted,
+              loc="upper left",
+              bbox_to_anchor=(1, 0, 0.5, 1))
+
+    plt.setp(autotexts, size=12)
+    ax.set_title(f"{title}", size = 20, weight="bold")
+
+    plt.show()
 
 # this function will be updated to plot monthly average against adoption average
 def monthly_in_out_grouped(count1, count2, year):
