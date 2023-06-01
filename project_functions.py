@@ -55,3 +55,11 @@ def monthly_in_out_grouped(count1, count2, year):
     ax.legend(ncols=3)
 
     plt.show()
+
+# Convert the Age into Years instead of Days
+def convertAgeToYears(age):
+    return age/365.24
+
+# Convert the Days in Shelter into Years instead of Days
+def convertDaysInShelterToYears(days):
+    return days/365.24
