@@ -51,10 +51,28 @@ def type_pie_chart(types, title):
     plt.show()
     plt.close(plt.gcf())
 
-
 def convertAgeToYears(age):
     return age/365.24
 
-
 def convertDaysInShelterToYears(days):
     return days/365.24
+
+def requestIntakeDateYearInput(df):
+    year = input("Enter a year between 2013 and 2023 to view number of "
+             "intakes per month: ")
+    while not year.isnumeric() or int(year) > 2023 or int(year) < 2013:
+        print("Invalid input")
+        year = input("Enter a year between 2013 and 2023 to view number of "
+                    "intakes per month: ")
+    df_in_date = df[df["Intake Date"].dt.strftime("%Y") == f"{year}"]
+    return year, df_in_date
+
+def requestOuttakeDateYearInput(df):
+    year = input("Enter a year between 2014 and 2023 to view number of "
+             "outcomes per month: ")
+    while not year.isnumeric() or int(year) > 2023 or int(year) < 2014:
+        print("Invalid input")
+        year = input("Enter a year between 2014 and 2023 to view number of "
+                 "outcomes per month: ")
+    df_out_date = df[df["Outcome Date"].dt.strftime("%Y") == f"{year}"]
+    return year, df_out_date
