@@ -2,15 +2,16 @@
 """
 Created on Wed May 24 09:47:57 2023
 
-@author: Priscilla Miller
+@author: Priscilla Miller and Jason Vou
 """
 import matplotlib.pyplot as plt
+from numpy import average
 
 MONTHS = {1: "Jan", 2: "Feb", 3: "Mar", 4: "Apr", 5: "May", 6: "Jun", 7: "Jul",
           8: "Aug", 9: "Sep", 10: "Oct", 11: "Nov", 12: "Dec"}
 
 
-# Plot monthly outcomes/intakes and intake average
+# Plot monthly outcomes/intakes and intake averages
 def monthly_in_out(count, year, category):
     labels = [MONTHS[x] for x in count.index.values]
     plt.figure(figsize=(6, 4))
@@ -54,10 +55,6 @@ def convertAgeToYears(age):
     return age/365.24
 
 
-def convertDaysInShelterToYears(days):
-    return days/365.24
-
-
 def requestIntakeDateYearInput():
     year = input("Enter a year between 2013 and 2023 to view number of "
                  "intakes per month: ")
@@ -74,3 +71,15 @@ def requestOutcomeDateYearInput(string):
         print("Invalid input")
         year = input(f"Enter a year between 2014 and 2023 to view {string}: ")
     return year
+
+
+def three_month_MA(x):
+    return round(average(x))
+
+
+def forecast_2023(a_list):
+    i = 6
+    while i < 13:
+        a_list.append(three_month_MA(a_list[i-3:i]))
+        i += 1
+    return sum(a_list)
