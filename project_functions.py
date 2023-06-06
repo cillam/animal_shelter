@@ -51,10 +51,12 @@ def type_pie_chart(types, title):
     plt.show()
 
 
+# Converts age in days to years
 def convertAgeToYears(age):
     return age/365.24
 
 
+# Requests user input for a specific year
 def requestIntakeDateYearInput():
     year = input("Enter a year between 2013 and 2023 to view number of "
                  "intakes per month: ")
@@ -65,6 +67,7 @@ def requestIntakeDateYearInput():
     return year
 
 
+# Requests user input for a specific year
 def requestOutcomeDateYearInput(string):
     year = input(f"Enter a year between 2014 and 2023 to view {string}: ")
     while not year.isnumeric() or int(year) > 2023 or int(year) < 2014:
@@ -73,13 +76,10 @@ def requestOutcomeDateYearInput(string):
     return year
 
 
-def three_month_MA(x):
-    return round(average(x))
-
-
+# Forecasts average for each month left in 2023
 def forecast_2023(a_list):
-    i = 6
+    i = len(a_list)
     while i < 13:
-        a_list.append(three_month_MA(a_list[i-3:i]))
+        a_list.append(round(average(a_list[i-3:i])))
         i += 1
     return sum(a_list)
