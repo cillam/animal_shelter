@@ -1,5 +1,7 @@
 # **Exploring Sonoma County animal shelter intake and outcome data**
 
+Authors: Priscilla Miller and Jason Vou
+
 For this data analysis, we are using the Sonoma County Animal Shelter Intake and Outcome dataset collected and made publicly available by Sonoma County with the purpose of helping the community better understand the animals being cared for by the shelter.
 
 The dataset includes each animal’s name, type, breed, color, sex, size, date of birth, kennel/impound details and ID, intake/outcome date, days in shelter, intake/outcome types, health condition, and outcome location. The data spans from August 2013 to May 2023.
