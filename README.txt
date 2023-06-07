@@ -1,4 +1,4 @@
-git # **Exploring Sonoma County animal shelter intake and outcome data**
+# **Exploring Sonoma County animal shelter intake and outcome data**
 
 For this data analysis, we are using the Sonoma County Animal Shelter Intake and Outcome dataset collected and made publicly available by Sonoma County with the purpose of helping the community better understand the animals being cared for by the shelter.
 
@@ -29,8 +29,8 @@ The dataset includes each animal’s name, type, breed, color, sex, size, date o
 Note: Jupyter Notebook cells should be run in sequential order. In order to view some of the plotting in the Jupyter Notebook, user input is required.
 
 ---
-<details>
-  <summary>Project Requirements</summary>
+
+Project Requirements
 
 #### Your project should include the following:
 
@@ -44,15 +44,15 @@ Note: Jupyter Notebook cells should be run in sequential order. In order to view
 3. Use typecasting whenever necessary
 
 #### **Part 3 – use some of the modules available in SciPy: (30pts)**
-1. The linalg module and it’s methods, applying them to NumPy data objects
+1. The linalg module and its methods, applying them to NumPy data objects
 2. Use any of the following SciPy modules:
    + interpolation, integration, FFT, signal processing, optimization, statistics or any other SciPy module needed in your case
-3. Since using sophisticated modeling may require the execution of calculations on a set of given data over and over again, you should use func=ons and/or classes with different methods
+3. Since using sophisticated modeling may require the execution of calculations on a set of given data over and over again, you should use functions and/or classes with different methods
 
 #### **Part 4 – ploting some of your results: (20pts)**
 1. make the best use of what we have covered: use 2-D or 3-D plots whenever necessary
 2. make sure that at minimum you use: titles, x- and y- labeling, x- and y- ticks
-3. when possible, use legends and annota=ons
+3. when possible, use legends and annotations
 
 #### **Part 5 – clean up your code: (10pts)**
 1. Use good coding practices (avoid cryptic expressions, use comments and sections, load only what you need, etc.)
@@ -64,4 +64,3 @@ Note: Jupyter Notebook cells should be run in sequential order. In order to view
    + the sequence of how your code needs to be executed
    + any other details that you think might be useful
 
-</details>
